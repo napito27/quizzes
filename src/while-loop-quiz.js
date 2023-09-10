@@ -13,6 +13,7 @@
  */
 let sum = 0;
 let a = 0;
+
 while (a < 10) {
   a++;
   sum += a;
@@ -26,6 +27,7 @@ console.log(`Question #1: ${sum}`);
 let numberStr = "";
 let b = 4;
 let bb = 15;
+
 while (b < bb) {
   b++;
   if (b !== bb) {
@@ -34,6 +36,7 @@ while (b < bb) {
     numberStr += b;
   }
 }
+
 console.log(`Question #2: ${numberStr}`);
 
 /**
@@ -42,15 +45,14 @@ console.log(`Question #2: ${numberStr}`);
  */
 let evenNumber = "";
 let c = 9;
-let cc = 30;
-while (c <= cc) {
-  if (c % 2 === 0 && c !== cc) {
+
+while (c <= 30) {
+  if (c % 2 === 0) {
     evenNumber += c + " ";
-  } else if (c % 2 === 0 && c === cc) {
-    evenNumber += c;
   }
   c++;
 }
+
 console.log(`Question #3: ${evenNumber}`);
 
 /**
@@ -59,16 +61,15 @@ console.log(`Question #3: ${evenNumber}`);
  */
 let result = 0;
 let d = 1;
-while (d < 50) {
+let dd = 0;
+
+while (Math.pow(d, 2) <= 1000) {
   d++;
-  let dd = Math.pow(d, 2);
-  if (dd > 1000) {
-    firstResult = d;
-    result = dd;
-    break;
-  }
+  result = d;
+  dd = Math.pow(d, 2); // to show the first value over 1000
 }
-console.log(`Question #4: Value is ${firstResult}, and result is ${result}`);
+
+console.log(`Question #4: Value is ${result},   at   ${dd}`);
 
 /**
  * Question 5
@@ -82,6 +83,7 @@ while (e > 0) {
   e--;
   reverseStr += wordStr[e];
 }
+
 console.log(`Question #5: ${reverseStr}`);
 
 /**
@@ -91,10 +93,12 @@ console.log(`Question #5: ${reverseStr}`);
 let word1 = "banana";
 let counter = 0;
 let f = 0;
+
 while (f < word1.length - 1) {
   f++;
   if (word1[f] === "a") counter++;
 }
+
 console.log(`Question #6: ${counter}`);
 
 /**
@@ -104,7 +108,7 @@ console.log(`Question #6: ${counter}`);
 let factNumber = 5;
 let factResult = 1;
 
-while (factNumber > 1) {
+while (factNumber >= 1) {
   factResult *= factNumber;
   factNumber--;
 }
@@ -129,6 +133,7 @@ while (high >= low) {
 }
 
 console.log(`Question #8: ${descNumber}`);
+
 /**
  * Question 9
  * Using a while loop, find the greatest common divisor (GCD) of two numbers, 56 and 98.
@@ -136,10 +141,14 @@ console.log(`Question #8: ${descNumber}`);
 let num1 = 56;
 let num2 = 98;
 
-while (num1 != num2) {
+while (num1 !== num2) {
+  //check if num1 is greater than (>) num2
   if (num1 > num2) {
+    //Subtract num2 from num1
     num1 = num1 - num2;
   } else {
+    //else if num2 is greater than (>) num1
+    //Subtract num1 from num2
     num2 = num2 - num1;
   }
 }
@@ -154,7 +163,9 @@ let oddNumber = 0;
 let g = 1;
 let gg = 50;
 while (g <= gg) {
+  //to determine if a number is odd
   if (g % 2 === 1) {
+    //adding all odd numbers found in the loop
     oddNumber += g;
   }
   g++;
